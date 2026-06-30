@@ -1,0 +1,108 @@
+=========================================================
+  CABINET FONTAINE – Site vitrine fictif d'avocat
+  Documentation du projet
+=========================================================
+
+IDÉE GÉNÉRALE
+─────────────
+Ce projet est un site vitrine fictif pour Maître Claire Fontaine,
+avocate indépendante au Barreau de Lyon. Il est conçu pour paraître
+professionnel, crédible et rassurant aux yeux d'un visiteur qui
+cherche une aide juridique.
+
+Tout le contenu est inventé : nom, adresse, téléphone, email,
+horaires, domaines, biographie. Ce site ne représente aucun
+professionnel réel et est produit à titre de démonstration.
+
+
+FICHIERS DU PROJET
+──────────────────
+index.html  – La page unique du site (structure HTML5 sémantique).
+style.css   – Toute la mise en forme, le design, le responsive.
+info.txt    – Ce fichier de documentation.
+
+Il n'y a aucune dépendance externe, aucun JavaScript, aucune image
+requise. Le projet s'ouvre directement dans un navigateur.
+
+
+STRUCTURE DES SECTIONS
+──────────────────────
+1. Header (sticky)     – Logo texte + navigation avec ancres internes.
+2. Hero                – Accroche forte, sous-titre, bouton CTA.
+3. À propos            – Présentation narrative de l'avocate.
+4. Domaines            – 5 cartes (famille, travail, affaires, pénal, civil).
+5. Pourquoi me choisir – 6 points de confiance, fond bleu nuit.
+6. Méthode de travail  – 4 étapes illustrées avec numérotation verticale.
+7. Contact             – Coordonnées + formulaire HTML simple (sans JS).
+8. Footer              – Résumé, liens, mention légale fictive.
+
+
+CHOIX DE DESIGN
+───────────────
+Palette :
+  – Bleu nuit (#1a2640) pour les fonds sombres et le texte principal.
+  – Bleu profond (#243454) pour la section "Pourquoi me choisir".
+  – Or discret (#b89a5e / #d4b87a) comme accent : souligne les labels,
+    les bordures et les boutons sans être tape-à-l'œil.
+  – Beige très clair (#f5f2ec) pour les sections claires.
+  – Gris texte (#5a5a5a) pour les paragraphes secondaires.
+
+Typographie :
+  – Georgia / serif pour les titres : crédibilité, sérieux, noblesse.
+  – Helvetica Neue / sans-serif pour le corps : lisibilité, modernité.
+
+Signature visuelle :
+  – La ligne de séparation en dégradé or dans le hero.
+  – Les initiales CF dans un cercle cerclé d'or dans la section À propos.
+  – Les numéros estompés en grand (01, 02…) dans "Pourquoi me choisir".
+
+L'ensemble vise un équilibre sobre : ni trop austère, ni trop chargé.
+
+
+POURQUOI LE SITE EST RESPONSIVE
+─────────────────────────────────
+Le site utilise des media queries à trois points de rupture :
+  – 900px : réorganisation des grilles (apropos, contact, footer).
+  – 680px : empilement des cartes, ajustement des textes, steps simplifiés.
+  – 480px : header vertical sur très petit écran.
+
+Les grilles utilisent CSS Grid avec "auto-fit / minmax" pour s'adapter
+naturellement sans recalcul manuel. Les tailles de titres utilisent
+clamp() pour une fluidité entre mobile et bureau.
+
+
+COMMENT PERSONNALISER LE CONTENU
+──────────────────────────────────
+1. Nom de l'avocat    → Chercher "Claire Fontaine" dans index.html et remplacer.
+2. Adresse / contact  → Section <ul class="contact-details"> dans index.html.
+3. Domaines           → Modifier les <article class="card"> dans la section #domaines.
+4. Biographie         → Section #apropos, balises <p> dans apropos-text.
+5. Couleurs           → Modifier les variables CSS dans :root {} dans style.css.
+6. Polices            → Remplacer Georgia / Helvetica Neue par des Google Fonts
+                        si souhaité (ajouter un <link> dans le <head>).
+
+
+COMMENT OUVRIR LE PROJET EN LOCAL
+───────────────────────────────────
+Option 1 (simple) :
+  – Placer les deux fichiers index.html et style.css dans le même dossier.
+  – Double-cliquer sur index.html pour l'ouvrir dans votre navigateur.
+
+Option 2 (recommandé pour développement) :
+  – Utiliser l'extension "Live Server" dans VS Code.
+  – Ou lancer : python3 -m http.server 8000 dans le dossier du projet,
+    puis ouvrir http://localhost:8000 dans votre navigateur.
+
+
+NOTES TECHNIQUES
+─────────────────
+– Aucun JavaScript n'est utilisé. Le formulaire de contact ne s'envoie
+  pas réellement (action="#"). Pour une vraie intégration, un service
+  comme Formspree ou un backend est nécessaire.
+– Aucune image externe n'est utilisée. L'effet portrait est obtenu en
+  CSS pur (div arrondi avec initiales).
+– Le site est accessible : contrastes corrects, structure sémantique,
+  labels de formulaire liés à leurs champs, focus visible sur les éléments
+  interactifs.
+
+=========================================================
